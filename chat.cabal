@@ -1,0 +1,94 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1f375feba868896ab101ea32e3c729aa67f6349308d71b93f507e8bcd41cb064
+
+name:           chat
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/bitemyapp/chat#readme>
+homepage:       https://github.com/bitemyapp/chat#readme
+bug-reports:    https://github.com/bitemyapp/chat/issues
+author:         Chris Allen
+maintainer:     cma@bitemyapp.com
+copyright:      2018 Chris Allen
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/bitemyapp/chat
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_chat
+  hs-source-dirs:
+      src
+  default-extensions: OverloadedStrings
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , conduit
+    , conduit-extra
+    , network
+    , safe
+    , store
+    , streaming-commons
+    , text
+    , transformers
+    , unliftio
+  default-language: Haskell2010
+
+executable chat-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_chat
+  hs-source-dirs:
+      app
+  default-extensions: OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , chat
+    , conduit
+    , conduit-extra
+    , network
+    , safe
+    , store
+    , streaming-commons
+    , text
+    , transformers
+    , unliftio
+  default-language: Haskell2010
+
+test-suite chat-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_chat
+  hs-source-dirs:
+      test
+  default-extensions: OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , chat
+    , conduit
+    , conduit-extra
+    , network
+    , safe
+    , store
+    , streaming-commons
+    , text
+    , transformers
+    , unliftio
+  default-language: Haskell2010

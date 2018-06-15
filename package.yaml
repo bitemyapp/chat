@@ -1,0 +1,54 @@
+name:                chat
+version:             0.1.0.0
+github:              "bitemyapp/chat"
+license:             BSD3
+author:              "Chris Allen"
+maintainer:          "cma@bitemyapp.com"
+copyright:           "2018 Chris Allen"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on GitHub at <https://github.com/bitemyapp/chat#readme>
+
+default-extensions:
+  - OverloadedStrings
+
+dependencies:
+- base >= 4.7 && < 5
+- bytestring
+- conduit
+- conduit-extra
+- network
+- safe
+- store
+- streaming-commons
+- text
+- transformers
+- unliftio
+
+library:
+  source-dirs: src
+
+executables:
+  chat-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - chat
+
+tests:
+  chat-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - chat
